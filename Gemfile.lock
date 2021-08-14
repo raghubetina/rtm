@@ -363,6 +363,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.2)
     tether-rails (1.4.0)
       rails (>= 3.1)
     thor (1.1.0)
@@ -417,7 +418,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   kaminari
   listen (>= 3.0.5, < 3.2)
-  pg (>= 0.18, < 2.0)
+  pg
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.2, >= 6.0.2.2)
@@ -428,6 +429,7 @@ DEPENDENCIES
   shoulda-matchers
   sprockets (~> 3.7)
   sprockets-rails
+  sqlite3
   tzinfo-data
   vandal_ui (~> 0.4)
   web-console (>= 3.3.0)
