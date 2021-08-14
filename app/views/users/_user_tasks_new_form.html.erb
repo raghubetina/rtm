@@ -1,0 +1,22 @@
+<!-- Form task start -->
+<%= form_with(model: @task, local: true) do |f| %>
+<!-- Form task end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <%= f.label :body %>
+
+    <!-- Input for body start -->
+    <%= f.text_field :body, class: "form-control" %>
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <%= f.submit "Create task", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
