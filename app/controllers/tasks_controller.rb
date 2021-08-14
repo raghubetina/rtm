@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :current_user_must_be_task_user, only: [:edit, :update, :destroy] 
+
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
@@ -57,6 +59,14 @@ class TasksController < ApplicationController
 
 
   private
+
+  def current_user_must_be_task_user
+    set_task
+    unless current_user == @task.user
+      redirect_back fallback_location: root_path, alert: "You are not authorized for that."
+    end
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])

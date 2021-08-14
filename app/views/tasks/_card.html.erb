@@ -24,16 +24,20 @@
 
       <!-- Edit link task start -->
       <div class="col">
-        <%= link_to edit_task_url(task), class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-edit"></i>
+        <% if current_user == @task.user %>
+          <%= link_to edit_task_url(task), class: "btn btn-block btn-sm btn-outline-secondary" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Edit link task end -->
 
       <!-- Delete link task start -->
       <div class="col">
-        <%= link_to task, method: :delete, data: { confirm: "Do you really want to delete this task?" }, class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-trash-alt"></i>
+        <% if current_user == @task.user %>
+          <%= link_to task, method: :delete, data: { confirm: "Do you really want to delete this task?" }, class: "btn btn-block btn-outline-secondary" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Delete link task end -->
