@@ -1,0 +1,5 @@
+<% was_validated = user.errors.any? %>
+
+<%= form_with(model: user, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
