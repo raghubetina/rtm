@@ -1,0 +1,46 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Task #<%= task.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>User</dt>
+      <!-- Display user_id start -->
+      <dd><%= task.user_id %></dd>
+      <!-- Display user_id end -->
+
+      <dt>Body</dt>
+      <!-- Display body start -->
+      <dd><%= task.body %></dd>
+      <!-- Display body end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back task, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link task start -->
+      <div class="col">
+        <%= link_to edit_task_url(task), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link task end -->
+
+      <!-- Delete link task start -->
+      <div class="col">
+        <%= link_to task, method: :delete, data: { confirm: "Do you really want to delete this task?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link task end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(task.updated_at) %> ago
+  </div>
+</div>
