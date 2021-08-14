@@ -4,24 +4,19 @@ class TasksController < ApplicationController
 
   before_action :set_task, only: %i[show edit update destroy]
 
-  # GET /tasks
   def index
     @q = Task.ransack(params[:q])
     @tasks = @q.result(distinct: true).includes(:user).page(params[:page]).per(10)
   end
 
-  # GET /tasks/1
   def show; end
 
-  # GET /tasks/new
   def new
     @task = Task.new
   end
 
-  # GET /tasks/1/edit
   def edit; end
 
-  # POST /tasks
   def create
     @task = Task.new(task_params)
 
@@ -37,7 +32,6 @@ class TasksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tasks/1
   def update
     if @task.update(task_params)
       redirect_to @task, notice: "Task was successfully updated."
@@ -46,7 +40,6 @@ class TasksController < ApplicationController
     end
   end
 
-  # DELETE /tasks/1
   def destroy
     @task.destroy
     message = "Task was successfully deleted."
@@ -67,12 +60,10 @@ class TasksController < ApplicationController
     end
   end
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_task
     @task = Task.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def task_params
     params.require(:task).permit(:user_id, :body)
   end
