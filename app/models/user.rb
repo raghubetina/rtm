@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  # Direct associations
+  
+  include JwtToken
+# Direct associations
 
   has_many   :tasks,
              :dependent => :destroy
