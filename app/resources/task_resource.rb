@@ -4,6 +4,7 @@ class TaskResource < ApplicationResource
   attribute :updated_at, :datetime, writable: false
   attribute :user_id, :integer
   attribute :body, :string
+  attribute :complete, :boolean
 
   # Direct associations
 
