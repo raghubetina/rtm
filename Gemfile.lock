@@ -121,6 +121,8 @@ GEM
     bindex (0.8.1)
     bootsnap (1.7.7)
       msgpack (~> 1.0)
+    bootstrap3-datetimepicker-rails (4.17.47)
+      momentjs-rails (>= 2.8.1)
     bootstrap4-kaminari-views (1.0.1)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -246,6 +248,8 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.0)
     minitest (5.14.4)
+    momentjs-rails (2.20.1)
+      railties (>= 3.1)
     msgpack (1.4.2)
     nio4r (2.5.8)
     nokogiri (1.12.3-x86_64-linux)
@@ -414,6 +418,7 @@ DEPENDENCIES
   activeadmin (= 2.2.0)
   activerecord-import
   bootsnap (>= 1.4.2)
+  bootstrap3-datetimepicker-rails (~> 4.17.43)
   bootstrap4-kaminari-views
   byebug
   coffee-rails
@@ -429,10 +434,12 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   kaminari
   listen (>= 3.0.5, < 3.2)
+  momentjs-rails (>= 2.9.0)
   pg
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.2, >= 6.0.2.2)
+  ransack
   rollbar
   rspec-rails
   rubocop-rails (= 2.5.2)

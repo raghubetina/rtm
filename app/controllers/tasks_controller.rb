@@ -5,7 +5,8 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @tasks = Task.page(params[:page]).per(10)
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
   end
 
   # GET /tasks/1
