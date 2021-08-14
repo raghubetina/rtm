@@ -6,18 +6,14 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @task.user.present? %>
           <%= link_to task.user, task.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Body</dt>
-      <!-- Display body start -->
       <dd><%= task.body %></dd>
-      <!-- Display body end -->
 
     </dl>
 
@@ -26,7 +22,6 @@
         <%= link_to_show_or_back task, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link task start -->
       <div class="col">
         <% if current_user == @task.user %>
           <%= link_to edit_task_url(task), class: "btn btn-block btn-sm btn-outline-secondary" do %>
@@ -34,9 +29,7 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Edit link task end -->
 
-      <!-- Delete link task start -->
       <div class="col">
         <% if current_user == @task.user %>
           <%= link_to task, method: :delete, data: { confirm: "Do you really want to delete this task?" }, class: "btn btn-block btn-outline-secondary" do %>
@@ -44,7 +37,6 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Delete link task end -->
     </div>
   </div>
 
