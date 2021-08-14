@@ -24,5 +24,28 @@
       <% end %>
     <% end %>
   </div>
+  <div class="form-check">
+    <% complete_class = "form-check-input" %>
+    <% complete_was_invalid = task.errors.include?(:complete) %>
+
+    <% if was_validated %>
+      <% if complete_was_invalid %>
+        <% complete_class << " is-invalid" %>
+      <% else %>
+        <% complete_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :complete, class: "form-check-label" do %>
+      <%= f.check_box :complete, class: complete_class %> Complete
+    <% end %>
+    <% if complete_was_invalid %>
+      <% task.errors.full_messages_for(:complete).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

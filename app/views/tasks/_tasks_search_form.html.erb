@@ -7,6 +7,21 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :complete_eq, "Complete" %>
+    <div>
+      <label class="radio-inline">
+        <%= f.radio_button :complete_eq, "1", checked: ((params[:q] && params[:q][:complete_eq]) == "1" ? "checked" : "") %> Yes
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :complete_eq, "0", checked: ((params[:q] && params[:q][:complete_eq]) == "0" ? "checked" : "")%> No
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :complete_eq, ""%> Either
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :created_at, "Created at" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
