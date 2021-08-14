@@ -12,5 +12,4 @@ class Task < ApplicationRecord
   def to_s
     body
   end
-
 end

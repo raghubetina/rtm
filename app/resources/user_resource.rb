@@ -7,8 +7,7 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :tasks
+  has_many :tasks
 
   # Indirect associations
-
 end
